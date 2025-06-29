@@ -1,6 +1,6 @@
 import unittest
 from symbolic import solve_equation
-from sympy import simplify, sqrt, S, I
+from sympy import simplify, sqrt, S, I, im, re
 
 class TestQuadraticSolver(unittest.TestCase):
     def test_real_roots(self):
@@ -15,8 +15,6 @@ class TestQuadraticSolver(unittest.TestCase):
         self.assertEqual([simplify(r) for r in result], expected)
 
     def test_complex_roots(self):
-        from sympy import im, re
-
         # Чисто мнимые корни (x² + 1 = 0 → x = ±i)
         result = solve_equation(1, 0, 1, target=0)
         self.assertEqual(len(result), 2)
