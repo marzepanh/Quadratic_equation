@@ -56,7 +56,3 @@ def solve_equation(
             return [simplify(r) for r in roots]
     else:
         return "Ошибка: параметры должны быть числами (включая комплексные, но не NaN/inf)."
-
-
-
-print(solve_equation(0, 2, 5))
